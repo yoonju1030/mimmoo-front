@@ -2,6 +2,9 @@
 import InfoTables from '@/views/pages/tables/InfoTables.vue';
 import eCommerce2 from '@images/eCommerce/2.png';
 import pages1 from '@images/pages/mainimage.png';
+import { useRouter } from "vue-router";
+
+const router = useRouter()
 
 
 const navigationTab = ref('ITEM ONE')
@@ -120,7 +123,7 @@ const newProject = {
         </v-carousel>
 
         <VCardActions>
-          <VBtn>More</VBtn>
+          <VBtn @click="$router.push('/product')">More</VBtn>
         </VCardActions>
       </VCard>
     </v-col>
@@ -156,13 +159,13 @@ const newProject = {
         </VCardText>
 
         <VCardText class="justify-center">
-          <VBtn variant="elevated" style="margin-right:10px;">
+          <VBtn variant="elevated" style="margin-right:10px;" @click="$router.push('/exp')">
             체험사례
           </VBtn>
-          <VBtn variant="elevated" >
+          <VBtn variant="elevated" @click="$router.push('/ask')">
             문의게시판
           </VBtn>
-          <VBtn variant="elevated" style="margin-left:10px;">
+          <VBtn variant="elevated" style="margin-left:10px;" @click="$router.push('/as')">
             A/S 안내
           </VBtn>
         </VCardText>

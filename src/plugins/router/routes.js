@@ -1,5 +1,5 @@
 export const routes = [
-  { path: '/', redirect: '/dashboard' },
+  { path: '/', redirect: '/home' },
   {
     path: '/',
     component: () => import('@/layouts/default.vue'),
@@ -7,6 +7,42 @@ export const routes = [
       {
         path: 'home',
         component: () => import('@/pages/home.vue'),
+      },
+      {
+        path: 'introduce',
+        component: () => import('@/pages/introduce.vue'),
+      },
+      {
+        path: 'history',
+        component: () => import('@/pages/history.vue'),
+      },
+      {
+        path: 'product',
+        component: () => import('@/pages/product.vue'),
+      },
+      {
+        path: 'feature',
+        component: () => import('@/pages/feature.vue'),
+      },
+      {
+        path: 'price',
+        component: () => import('@/pages/price.vue'),
+      },
+      {
+        path: 'information',
+        component: () => import('@/pages/info/information.vue'),
+      },
+      {
+        path: 'ask',
+        component: () => import('@/pages/info/ask.vue'),
+      },
+      {
+        path: 'as',
+        component: () => import('@/pages/info/as.vue'),
+      },
+      {
+        path: 'exp',
+        component: () => import('@/pages/info/experience.vue'),
       },
       {
         path: 'dashboard',
