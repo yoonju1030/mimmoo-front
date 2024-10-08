@@ -5,6 +5,10 @@ export const routes = [
     component: () => import('@/layouts/default.vue'),
     children: [
       {
+        path: 'home',
+        component: () => import('@/pages/home.vue'),
+      },
+      {
         path: 'dashboard',
         component: () => import('@/pages/dashboard.vue'),
       },
