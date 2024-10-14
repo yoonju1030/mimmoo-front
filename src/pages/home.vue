@@ -1,7 +1,7 @@
 <script setup>
 import InfoTables from '@/views/pages/tables/InfoTables.vue';
 import eCommerce2 from '@images/eCommerce/2.png';
-import pages1 from '@images/pages/mainimage.png';
+import pages1 from '@images/pages/mainimage02.png';
 import { useRouter } from "vue-router";
 
 const router = useRouter()
@@ -45,13 +45,13 @@ const newProject = {
           cover
         />
 
-        <VCardItem>
+        <!-- <VCardItem>
           <VCardTitle>발은 제2의 심장전신의 축소판</VCardTitle>
         </VCardItem>
 
         <VCardText>
             발이 편해야 하루 일과가 편합니다.
-        </VCardText>
+        </VCardText> -->
       </VCard>
     </v-col>
 </v-row>
