@@ -25,6 +25,10 @@ export const routes = [
         component: () => import('@/pages/feature.vue'),
       },
       {
+        path: 'product/:id',
+        component: () => import('@/pages/productDetail.vue')
+      },
+      {
         path: 'price',
         component: () => import('@/pages/price.vue'),
       },

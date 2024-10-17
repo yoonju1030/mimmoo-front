@@ -1,16 +1,40 @@
 <script setup>
+import { onMounted, ref } from 'vue';
 import { useRouter } from "vue-router";
 import productMiniVue from './productMini.vue';
 const router = useRouter()
+const search = ref("")
+const targetList = ref([])
 const productList = [
-    "MDM01", "MDM02", "MDM03", 
-    "MDM04", "MDM05", "MDM06", 
-    "MDM07", "MDM08", "MDM09", 
-    "MDM10", "MDM11", "MDM12"
+    {id:"MDM01", type: "남성용"}, 
+    {id:"MDM02", type: "여성용"}, 
+    {id:"MDM03", type: "여성용"}, 
+    {id:"MDM04", type: "남성용"}, 
+    {id:"MDM05", type: "남성용"}, 
+    {id:"MDM06", type: "여성용"}, 
+    {id:"MDM07", type: "여성용"}, 
+    {id:"MDM08", type: "남성용"}, 
+    {id:"MDM09", type: "남성용"}, 
+    {id:"MDM10", type: "여성용"}, 
+    {id:"MDM11", type: "여성용"}, 
+    {id:"MDM12", type: "남성용"}, 
 ]
+onMounted(() => {
+    targetList.value = productList
+})
 
-const clickProduct = (id) => {
-    router.push({path: `/product/${id}`})
+
+const clickProduct = (p) => {
+    let g = "w";
+    if (p.type === "남성용") {
+        g="m"
+    }
+    router.push({path: `/product/${p.id}${g}`})
+}
+
+const required = (v) => {
+    targetList.value = productList.filter((p) => p.id.indexOf(v)>-1)
+    return true
 }
 
 </script>
@@ -21,15 +45,26 @@ const clickProduct = (id) => {
     </h1>
     <br/>
 
+      <v-text-field
+        v-model="search"
+        :rules="[required]"
+        append-inner-icon="mdi-magnify"
+        density="compact"
+        label="상품 검색"
+        variant="solo"
+        single-line
+      ></v-text-field>
+      <br/>
+
     <VRow class="match-height">
         <VCol
             cols="12"
             sm="2"
-            v-for="id in productList"
-            :key="id"
-            @click="clickProduct(id)"
+            v-for="p in targetList"
+            :key="p"
+            @click="clickProduct(p)"
         >
-            <productMiniVue v-bind:productId="id"/>
+            <productMiniVue :productId="p.id" :productType="p.type"/>
         </VCol>
     </VRow>
 </template>
