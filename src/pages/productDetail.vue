@@ -1,5 +1,5 @@
 <script setup>
-import pages3 from '@images/pages/3.png';
+import page3 from '@images/pages/3.png';
 import { onMounted, ref } from 'vue';
 import { useRoute, useRouter } from "vue-router";
 
@@ -44,7 +44,7 @@ const moveProduct = () => {
             </VCol>
             <VCol 
             col="12"
-            sm="6"><VImg :src="pages3" />
+            sm="6"><VImg :src="page3" />
             </VCol>
         </VRow>
         <VRow>
@@ -54,7 +54,7 @@ const moveProduct = () => {
             </VCol>
             <VCol 
             col="12"
-            sm="6"><VImg :src="pages3" />
+            sm="6"><VImg :src="page3" />
             </VCol>
         </VRow>
         <VRow>
@@ -64,7 +64,7 @@ const moveProduct = () => {
             </VCol>
             <VCol 
             col="12"
-            sm="6"><VImg :src="pages3" />
+            sm="6"><VImg :src="page3" />
             </VCol>
         </VRow>
         <br/>

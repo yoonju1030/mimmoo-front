@@ -1,7 +1,13 @@
 <template>
     <VCard>
         <VImg
-          :src="pages5"
+        v-if="productType == '남성용'"
+          :src="product1"
+          contain
+        />
+        <VImg
+        v-else
+          :src="product2"
           contain
         />
         <VCardItem>
@@ -14,7 +20,8 @@
 </template>
 
 <script setup>
-import pages5 from '@images/pages/5.jpg';
+import product1 from '@images/pages/product1.png';
+import product2 from '@images/pages/product2.png';
 const props = defineProps({
   productId: {
     type: String,

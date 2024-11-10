@@ -37,6 +37,10 @@ export const routes = [
         component: () => import('@/pages/info/information.vue'),
       },
       {
+        path: 'information/:id',
+        component: () => import('@/pages/info/informationDetail.vue'),
+      },
+      {
         path: 'ask',
         component: () => import('@/pages/info/ask.vue'),
       },
