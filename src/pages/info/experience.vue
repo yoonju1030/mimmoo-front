@@ -1,115 +1,46 @@
 <script setup>
-import AnalyticsAward from '@/views/dashboard/AnalyticsAward.vue'
-import AnalyticsBarCharts from '@/views/dashboard/AnalyticsBarCharts.vue'
-import AnalyticsDepositWithdraw from '@/views/dashboard/AnalyticsDepositWithdraw.vue'
-import AnalyticsSalesByCountries from '@/views/dashboard/AnalyticsSalesByCountries.vue'
-import AnalyticsTotalEarning from '@/views/dashboard/AnalyticsTotalEarning.vue'
-import AnalyticsTotalProfitLineCharts from '@/views/dashboard/AnalyticsTotalProfitLineCharts.vue'
-import AnalyticsTransactions from '@/views/dashboard/AnalyticsTransactions.vue'
-import AnalyticsUserTable from '@/views/dashboard/AnalyticsUserTable.vue'
-import AnalyticsWeeklyOverview from '@/views/dashboard/AnalyticsWeeklyOverview.vue'
-import CardStatisticsVertical from '@core/components/cards/CardStatisticsVertical.vue'
+  import { useRouter } from "vue-router";
+  const router = useRouter()
+  const items = [
+    {
+      "id": 123,
+      "제목": '체험사례.',
+      "글쓴이": '박진우',
+      "날짜": '2024-11-09 23:07',
+      "조회": 1000,
+    },
+  ]
 
-const totalProfit = {
-  title: 'Total Profit',
-  color: 'secondary',
-  icon: 'ri-pie-chart-2-line',
-  stats: '$25.6k',
-  change: 42,
-  subtitle: 'Weekly Project',
-}
+  const clickDetail = (item, event) => {
+    console.log(item)
+    router.push({path: `/exp/${event.item.id}`})
+  }
 
-const newProject = {
-  title: 'New Project',
-  color: 'primary',
-  icon: 'ri-file-word-2-line',
-  stats: '862',
-  change: -18,
-  subtitle: 'Yearly Project',
+  const moveInformtion = () => {
+    router.push('/expWriting')
 }
 </script>
 
 <template>
-  <VRow class="match-height">
+<h1>체험사례</h1>
+<br/>
+  <VRow>
     <VCol
       cols="12"
-      md="4"
     >
-      <AnalyticsAward />
+    <VCard>
+      <v-data-table 
+      :items="items"
+      @click:row="clickDetail"
+      ></v-data-table>
+    </VCard>
     </VCol>
-
-    <VCol
-      cols="12"
-      md="8"
-    >
-      <AnalyticsTransactions />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <AnalyticsWeeklyOverview />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <AnalyticsTotalEarning />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <VRow class="match-height">
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <AnalyticsTotalProfitLineCharts />
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <CardStatisticsVertical v-bind="totalProfit" />
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <CardStatisticsVertical v-bind="newProject" />
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <AnalyticsBarCharts />
-        </VCol>
-      </VRow>
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="4"
-    >
-      <AnalyticsSalesByCountries />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="8"
-    >
-      <AnalyticsDepositWithdraw />
-    </VCol>
-
-    <VCol cols="12">
-      <AnalyticsUserTable />
-    </VCol>
+  </VRow>
+  <VRow>
+    <VCol>
+    <span class="font-weight-black" style="float: right;">
+        <v-btn @click="moveInformtion">글쓰기</v-btn>
+    </span>
+  </VCol>
   </VRow>
 </template>

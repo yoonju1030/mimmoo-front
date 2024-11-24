@@ -15,10 +15,14 @@
     console.log(item)
     router.push({path: `/ask/${event.item.id}`})
   }
+
+  const moveInformtion = () => {
+    router.push('/askWriting')
+}
 </script>
 
 <template>
-<h1>공지사항</h1>
+<h1>문의게시판</h1>
 <br/>
   <VRow>
     <VCol
@@ -31,5 +35,12 @@
       ></v-data-table>
     </VCard>
     </VCol>
+  </VRow>
+  <VRow>
+    <VCol>
+    <span class="font-weight-black" style="float: right;">
+        <v-btn @click="moveInformtion">글쓰기</v-btn>
+    </span>
+  </VCol>
   </VRow>
 </template>

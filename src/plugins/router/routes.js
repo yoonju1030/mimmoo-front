@@ -49,6 +49,18 @@ export const routes = [
         component: () => import('@/pages/info/askDetail.vue'),
       },
       {
+        path: "/askWriting",
+        component: () => import('@/pages/info/askWriting.vue'),
+      },
+      {
+        path: "exp/:id",
+        component: () => import('@/pages/info/expDetail.vue'),
+      },
+      {
+        path: "/expWriting",
+        component: () => import('@/pages/info/expWriting.vue'),
+      },
+      {
         path: 'as',
         component: () => import('@/pages/info/as.vue'),
       },
