@@ -59,10 +59,9 @@ const required = (v) => {
     <VRow class="match-height">
         <VCol
             cols="12"
-            sm="2"
+            sm="3"
             v-for="p in targetList"
             :key="p"
-            @click="clickProduct(p)"
         >
             <productMiniVue :productId="p.id" :productType="p.type"/>
         </VCol>
