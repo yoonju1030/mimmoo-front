@@ -45,6 +45,10 @@ export const routes = [
         component: () => import('@/pages/info/ask.vue'),
       },
       {
+        path: "ask/:id",
+        component: () => import('@/pages/info/askDetail.vue'),
+      },
+      {
         path: 'as',
         component: () => import('@/pages/info/as.vue'),
       },

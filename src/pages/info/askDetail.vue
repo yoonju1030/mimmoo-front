@@ -11,7 +11,7 @@ onMounted(() => {
 
 
 const moveInformtion = () => {
-    router.push('/information')
+    router.push('/ask')
 }
 </script>
 
@@ -21,16 +21,16 @@ const moveInformtion = () => {
   <v-card
   subtitle="2024-11-09 23:07">
     <template v-slot:title>
-      <span class="font-weight-black">편한발 홈페이지 방문을 환영합니다.</span>
+      <span class="font-weight-black">문의드립니다.</span>
       <span class="font-weight-black" style="float: right;">
           <v-btn @click="moveInformtion">목록</v-btn>
       </span>
     </template>
 
     <v-card-text class="">
-      편한발 홈페이지 방문을 환영합니다.<br/>
-      항상 최선을 다하고 노력하는 편한발이 되겠습니다.<br/>
-      많은 성원과 관심 부탁드립니다. 감사합니다.<br/>
+      안녕하세요<br/>
+      저는 이윤주 입니다.<br/>
+      私はいつもジヌ君に会いたいです.<br/>
     </v-card-text>
   </v-card>
 </template>

@@ -21,7 +21,7 @@ import VerticalNavLayout from '@layouts/components/VerticalNavLayout.vue';
         <!-- eslint-enable -->
 
         <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-          밈무메디컬
+          편한발
         </h1>
       </RouterLink>
 

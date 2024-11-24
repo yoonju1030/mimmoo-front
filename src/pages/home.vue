@@ -2,6 +2,8 @@
 import InfoTables from '@/views/pages/tables/InfoTables.vue';
 import eCommerce2 from '@images/eCommerce/2.png';
 import pages1 from '@images/pages/mainimage02.png';
+import product1 from '@images/pages/product1.png';
+import product2 from '@images/pages/product2.png';
 import { useRouter } from "vue-router";
 
 const router = useRouter()
@@ -84,7 +86,7 @@ const newProject = {
                         <VImg
                             width="137"
                             height="176"
-                            :src="eCommerce2"
+                            :src="product1"
                         />
                         </div>
                     </div>
@@ -111,7 +113,7 @@ const newProject = {
                         <VImg
                             width="137"
                             height="176"
-                            :src="eCommerce2"
+                            :src="product2"
                         />
                         </div>
                     </div>

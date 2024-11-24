@@ -13,7 +13,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue';
   /> -->
   <VerticalNavGroup
     :item="{
-      title: '밈무메디컬소개',
+      title: '편한발소개',
       icon: 'ri-home-smile-line',
     }"
   >
