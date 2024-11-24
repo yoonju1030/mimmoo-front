@@ -74,7 +74,7 @@ export const routes = [
       },
       {
         path: 'account-settings',
-        component: () => import('@/pages/account-settings.vue'),
+        component: () => import('@/pages/temp.vue'),
       },
       {
         path: 'typography',
@@ -96,6 +96,10 @@ export const routes = [
         path: 'form-layouts',
         component: () => import('@/pages/form-layouts.vue'),
       },
+      {
+        path: 'template',
+        component: () => import('@/pages/form-layouts.vue'),
+      }
     ],
   },
   {
