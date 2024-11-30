@@ -6,18 +6,18 @@ const router = useRouter()
 const search = ref("")
 const targetList = ref([])
 const productList = [
-    {id:"MDM01", type: "남성용"}, 
-    {id:"MDM02", type: "여성용"}, 
-    {id:"MDM03", type: "여성용"}, 
-    {id:"MDM04", type: "남성용"}, 
-    {id:"MDM05", type: "남성용"}, 
-    {id:"MDM06", type: "여성용"}, 
-    {id:"MDM07", type: "여성용"}, 
-    {id:"MDM08", type: "남성용"}, 
-    {id:"MDM09", type: "남성용"}, 
-    {id:"MDM10", type: "여성용"}, 
-    {id:"MDM11", type: "여성용"}, 
-    {id:"MDM12", type: "남성용"}, 
+    {id:"MDM01", type: "남성용", price: "440,000원"}, 
+    {id:"MDM02", type: "여성용", price: "400,000원"}, 
+    // {id:"MDM03", type: "여성용"},  
+    // {id:"MDM04", type: "남성용"}, 
+    // {id:"MDM05", type: "남성용"}, 
+    // {id:"MDM06", type: "여성용"}, 
+    // {id:"MDM07", type: "여성용"}, 
+    // {id:"MDM08", type: "남성용"}, 
+    // {id:"MDM09", type: "남성용"}, 
+    // {id:"MDM10", type: "여성용"}, 
+    // {id:"MDM11", type: "여성용"}, 
+    // {id:"MDM12", type: "남성용"}, 
 ]
 onMounted(() => {
     targetList.value = productList
@@ -63,7 +63,7 @@ const required = (v) => {
             v-for="p in targetList"
             :key="p"
         >
-            <productMiniVue :productId="p.id" :productType="p.type"/>
+            <productMiniVue :productId="p.id" :productType="p.type" :productPrice="p.price"/>
         </VCol>
     </VRow>
 </template>

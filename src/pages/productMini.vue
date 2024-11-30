@@ -7,6 +7,7 @@
           contain
         />
         <VImg
+        @click="clickProduct(productType, productId)"
         v-else
           :src="product2"
           contain
@@ -20,24 +21,27 @@
           </VCardTitle>
         </VCardItem>
         <VCardText>
-            {{ productType }}
+            {{ productPrice }}
             
         </VCardText>
     </VCard>
 </template>
 
 <script setup>
-import product1 from '@images/pages/product1.png';
 import product2 from '@images/pages/product2.png';
+import product1 from '@images/pages/product3.png';
 import { useRouter } from "vue-router";
 const router = useRouter()
-
 const props = defineProps({
   productId: {
     type: String,
     required: true
   },
   productType: {
+    type: String,
+    required: true
+  },
+  productPrice: {
     type: String,
     required: true
   }

@@ -30,7 +30,7 @@ const moveInformtion = () => {
     <v-card-text class="">
       안녕하세요<br/>
       저는 이윤주 입니다.<br/>
-      私はいつもジヌ君に会いたいです.<br/>
+      신발 구매하고 싶은데 구매 방법 문의드립니다.<br/>
     </v-card-text>
   </v-card>
 </template>
