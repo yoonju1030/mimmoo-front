@@ -1,5 +1,7 @@
 <script setup>
-  import { useRouter } from "vue-router";
+import { getPosts } from "@/plugins/api/posts";
+import { onMounted } from "vue";
+import { useRouter } from "vue-router";
   const router = useRouter()
   const items = [
     {
@@ -10,6 +12,11 @@
       "조회": 1000,
     },
   ]
+
+  onMounted(async () => {
+    let posts = await getPosts("ask")
+    console.log(posts)
+  })
 
   const clickDetail = (item, event) => {
     console.log(item)
